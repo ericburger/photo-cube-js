@@ -77,8 +77,8 @@
           });
           paddingRight = paddingLeft = paddingTop = 0;      
         }else{
-          s.fx.interval = 20; // Reduce animation frequency
-        
+          s.fx.interval = options.interval; // Reduce animation frequency
+          
           cubeWidth = containerDiv.width()*options.reduce/100;  
           cubeHeight = cubeWidth*options.height/options.width;
           parent = s('<div class="pcjs-parent"></div>');
@@ -2790,6 +2790,6 @@
     imageLink: 1,
     postTitle: 0,
     postExcerpt: 0,
-
+    interval: 20,
   }
 })( window, jQuery );

@@ -1,0 +1,110 @@
+
+/* Cube Stylesheet
+ *
+ * @version 0.0.1
+ * @author Eric Burger
+ * @link http://thealpinepress.com
+ * @copyright: Eric Burger 2012
+ * @license http://www.gnu.org/licenses/gpl-3.0.html
+ * @since 0.0.1
+ * @last edited July 2012
+  -------------------------------------------- */
+
+.pcjs-parent{
+  position:relative;
+  display: block;
+  width:100%;
+  height:320px;
+  margin:0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;  
+}
+.pcjs-parent p{
+  font-size:1.08333em;
+  line-height:1.20333em;
+  font-weight:normal;
+  margin:2px 0 0 0;
+  color: #555555;
+}
+.pcjs-parent h2{
+  font-size:1.28333em;
+  line-height: 1.3em;
+  font-weight:normal;
+  color:#000;
+  margin:0;
+}
+.pcjs-parent #image-holder{
+  position:relative;
+  text-align:right;
+}
+.pcjs-parent #image-holder img{
+  max-width:100%;
+  vertical-align: middle;
+}
+.pcjs-parent .empty {
+  background-image: url("images/empty.gif");
+}
+.pcjs-parent #cover {
+  position:absolute;
+  overflow:hidden;
+  z-index:200;
+}
+.pcjs-parent #cover-link-container {
+  width:100%;
+  height:100%;
+  z-index:203;
+  overflow:hidden;
+}
+.pcjs-parent #cover-link-container #cover-link{
+  width:100%;
+  height:100%;
+  display:block;
+  overflow:hidden;
+  z-index:203;
+}
+.pcjs-parent #cover-text{
+  position:absolute;
+  bottom:0px;
+  right:0px;  
+  max-width:71%;
+  display:block;
+  margin:0px;
+  overflow:hidden;
+  z-index:201;
+  bottom:5%;
+}
+.pcjs-parent .nav {
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-color: transparent;
+  bottom:5%;
+}
+.pcjs-parent #next {
+  display:block;
+  z-index:205;
+  background-image: url("images/arrow-right-button-blue.png");
+}
+
+.pcjs-parent #prev {
+  display:block;
+  z-index:205;
+  background-image: url("images/arrow-left-button-blue.png");
+}
+
+.pcjs-parent .play {
+  bottom:5%;
+  overflow:hidden;
+  display:block;
+  z-index:205;
+  background-image: url("images/play-button-blue.png");
+}
+.pcjs-parent .pause {
+  background-image: url("images/pause-button-blue.png");
+}
+.pcjs-parent #next:hover,.pcjs-parent #prev:hover ,.pcjs-parent .play:hover,.pcjs-parent .pause:hover  {
+  background-position: 50% 100%;
+}

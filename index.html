@@ -1,1 +1,96 @@
-Hello
+<link rel="stylesheet"  href="photocube.css" type="text/css" media="all">
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<div class="container">
+  <nav class="navbar navbar-default">  
+    <div class="container-fluid"> <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span> 
+      </button> 
+      
+      <a class="navbar-brand" href="#">Brand</a> </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6"> 
+        <ul class="nav navbar-nav"> 
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+        </ul> 
+      </div> 
+    </div> 
+  </nav> 
+</div>
+
+
+
+<div class="pcjs_wrapper" style="width: 700px;position: relative; display: block;margin: 100px auto; clear: both;">
+  <div id="952-pcjs_container" class="pcjs_container_class">
+    <div id="952-hidden-parent" class="pcjs_parent_class" >
+      <div id="952-image-list" class="pcjs_image_list_class" style="display:none;visibility:hidden;">
+      
+        <div class="pcjsImage" data-id="0" data-title="IMG_0095" data-perm="https://www.flickr.com/photos/70324072@N04/7200304546/" data-excerpt=""><img src="https://farm8.staticflickr.com/7225/7200304546_fedcf4ba42.jpg"></div>
+        
+        <div class="pcjsImage" data-id="2" data-title="IMG_0097" data-perm="https://www.flickr.com/photos/70324072@N04/7200318238/" data-excerpt=""><img src="https://farm9.staticflickr.com/8164/7200318238_14c2fae6ae.jpg"></div>
+        
+        <div class="pcjsImage" data-id="3" data-title="IMG_0098" data-perm="https://www.flickr.com/photos/70324072@N04/7200322908/" data-excerpt=""><img src="https://farm6.staticflickr.com/5348/7200322908_ec12a7c83b.jpg"></div>
+        
+        <div class="pcjsImage" data-id="4" data-title="IMG_0099" data-perm="https://www.flickr.com/photos/70324072@N04/7200326960/" data-excerpt=""><img src="https://farm8.staticflickr.com/7072/7200326960_9f43ec4eb0.jpg"></div>
+        
+        <div class="pcjsImage" data-id="5" data-title="IMG_0102" data-perm="https://www.flickr.com/photos/70324072@N04/7200331570/" data-excerpt=""><img src="https://farm8.staticflickr.com/7087/7200331570_db3cf97bbd.jpg"></div>
+        
+        <div class="pcjsImage" data-id="6" data-title="IMG_0103" data-perm="https://www.flickr.com/photos/70324072@N04/7200337568/" data-excerpt=""><img src="https://farm8.staticflickr.com/7221/7200337568_876928ee33.jpg"></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="modernizr.custom.14329.js"></script> 
+<script src="jquery.easing.1.3.js"></script> 
+<script src="jquery.photocube.js"></script> 
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>    
+
+<script>
+    jQuery(document).ready(function() {
+      jQuery("952-pcjs_container").addClass("loading"); 
+    });
+    jQuery(window).load(function() {
+      jQuery("#952-pcjs_container").removeClass("loading");
+      if( jQuery().PhotoCubeJS ){
+        jQuery("#952-pcjs_container").PhotoCubeJS({
+          imageListClass: "pcjs_image_list_class",
+          style: "slicebox",
+          special: "slicebox_random",
+          width: 1.85,
+          height: 1,
+          reduce: 70,
+          shadow: 1,
+          background: "",
+          crop: 1,
+          numSlices: 5,
+          navHover: 1,
+          time: 4000,
+          delay: 5000,
+          auto: 1,
+          playPause: 1,
+          startPaused: 1,
+          imageLink: 1,
+        });
+      }
+    });
+</script>

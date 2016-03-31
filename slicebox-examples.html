@@ -17,10 +17,10 @@
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6"> 
         <ul class="nav navbar-nav"> 
-          <li class="active"><a href="index.html">Main</a></li>
+          <li><a href="index.html">Main</a></li>
           <li><a href="slider-examples.html">Slider Examples</a></li>
           <li><a href="cube-examples.html">Cube Examples</a></li>
-          <li><a href="slicebox-examples.html">Slicebox Examples</a></li>
+          <li class="active"><a href="slicebox-examples.html">Slicebox Examples</a></li>
         </ul> 
       </div> 
     </div> 
@@ -37,9 +37,9 @@
   
   <div class="row">
     <div class="pcjs_wrapper" style="width:60%;position: relative; display: block;margin: 80px auto; clear: both;">
-      <div id="952-pcjs_container" class="pcjs_container_class">
-        <div id="952-hidden-parent" class="pcjs_parent_class" >
-          <div id="952-image-list" class="pcjs_image_list_class" style="display:none;visibility:hidden;">
+      <div id="1-pcjs_container" class="pcjs_container_class">
+        <div id="1-hidden-parent" class="pcjs_parent_class" >
+          <div id="1-image-list" class="pcjs_image_list_class" style="display:none;visibility:hidden;">
           
             <div class="pcjsImage" data-id="0" data-title="IMG_0095" data-perm="https://www.flickr.com/photos/70324072@N04/7200304546/" data-excerpt=""><img src="https://farm8.staticflickr.com/7225/7200304546_fedcf4ba42.jpg"></div>
             
@@ -57,13 +57,44 @@
     </div>
   </div>
   
+  <div class="row">
+    <div class="pcjs_wrapper" style="width:60%;position: relative; display: block;margin: 80px auto; clear: both;">
+      <div id="2-pcjs_container" class="pcjs_container_class">
+        <div id="2-hidden-parent" class="pcjs_parent_class" >
+          <div id="2-image-list" class="pcjs_image_list_class" style="display:none;visibility:hidden;">
+          
+            <div class="pcjsImage" data-id="0" data-title="IMG_0095" data-perm="https://www.flickr.com/photos/70324072@N04/7200304546/" data-excerpt=""><img src="https://farm8.staticflickr.com/7225/7200304546_fedcf4ba42.jpg"></div>
+            
+            <div class="pcjsImage" data-id="2" data-title="IMG_0097" data-perm="https://www.flickr.com/photos/70324072@N04/7200318238/" data-excerpt=""><img src="https://farm9.staticflickr.com/8164/7200318238_14c2fae6ae.jpg"></div>
+            
+            <div class="pcjsImage" data-id="3" data-title="IMG_0098" data-perm="https://www.flickr.com/photos/70324072@N04/7200322908/" data-excerpt=""><img src="https://farm6.staticflickr.com/5348/7200322908_ec12a7c83b.jpg"></div>
+            
+            <div class="pcjsImage" data-id="4" data-title="IMG_0099" data-perm="https://www.flickr.com/photos/70324072@N04/7200326960/" data-excerpt=""><img src="https://farm8.staticflickr.com/7072/7200326960_9f43ec4eb0.jpg"></div>
+            
+            <div class="pcjsImage" data-id="5" data-title="IMG_0102" data-perm="https://www.flickr.com/photos/70324072@N04/7200331570/" data-excerpt=""><img src="https://farm8.staticflickr.com/7087/7200331570_db3cf97bbd.jpg"></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 
 
 
-
+          if( 'slicebox_drop' == options.special ){
+            cube.animateDrop(options.time,'forward');
+          }else if( 'slicebox_quick' == options.special ){
+            cube.animateQuick(options.time,'forward');
+          }else if( 'slicebox_tip' == options.special ){
+            cube.animateTip(options.time,'forward');
+          }else if( 'slicebox_swing' == options.special ){
+            cube.animateSwing(options.time,'forward');
+          }else if( 'slicebox_bounce' == options.special ){
+            cube.animateBounce(options.time,'forward');
+          }else if( 'slicebox_random' == options.special ){
 
 
 
@@ -82,12 +113,12 @@
 
 <script>
     jQuery(document).ready(function() {
-      jQuery("952-pcjs_container").addClass("loading"); 
+      jQuery("1-pcjs_container").addClass("loading"); 
     });
     jQuery(window).load(function() {
-      jQuery("#952-pcjs_container").removeClass("loading");
+      jQuery("#1-pcjs_container").removeClass("loading");
       if( jQuery().PhotoCubeJS ){
-        jQuery("#952-pcjs_container").PhotoCubeJS({
+        jQuery("#1-pcjs_container").PhotoCubeJS({
           imageListClass: "pcjs_image_list_class",
           style: "slicebox",
           special: "slicebox_random",
@@ -105,6 +136,37 @@
           playPause: 1,
           startPaused: 0,
           imageLink: 1,
+        });
+      }
+    });
+</script>
+
+<script>
+    jQuery(document).ready(function() {
+      jQuery("2-pcjs_container").addClass("loading"); 
+    });
+    jQuery(window).load(function() {
+      jQuery("#2-pcjs_container").removeClass("loading");
+      if( jQuery().PhotoCubeJS ){
+        jQuery("#2-pcjs_container").PhotoCubeJS({
+          imageListClass: "pcjs_image_list_class",
+          style: "slicebox",
+          special: "slicebox_quick",
+          width: 1.85,
+          height: 1,
+          reduce: 70,
+          shadow: 1,
+          background: "",
+          crop: 1,
+          numSlices: 3,
+          navHover: 0,
+          time: 3000,
+          delay: 0,
+          auto: 1,
+          playPause: 0,
+          startPaused: 0,
+          imageLink: 0,
+          interval: 60, /* The rate (in milliseconds) at which animations fire.*/
         });
       }
     });

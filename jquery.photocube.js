@@ -1,17 +1,25 @@
 /*
- * 3D Slideshow, Cube, and SliceBox Plugin
- * Written in jQuery
- *
- * @package the Alpine Press PhotoCube 3D
- * @version 0.1.2
- * @author Eric Burger
- * @link http://thealpinepress.com
- * @copyright: Eric Burger 2012
- * @license http://www.gnu.org/licenses/gpl-3.0.html
- * @last edited August 2012
- * 
- */
+PhotoCudeJS
+Slideshow, Cube, and SliceBox Plugin Written in JS/jQuery
 
+@version 0.1.2
+@author Eric Burger
+@link https://github.com/ericburger/photo-cube-js
+@created August 2012
+@last edited April 2016
+
+
+
+The MIT License (MIT)
+Copyright (c) 2016 Eric Burger
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
 
 (function( w, s ) {
   s.fn.PhotoCubeJS = function( options ) {
@@ -30,7 +38,7 @@
         cube,moving=false,autoTimer,hoverEffects=true,largeIcons=false,
         cubeWidth,cubeHeight,paddingTop,paddingRight,paddingLeft,
         mouseOver,onScreen=true,imgList = s("."+options.imageListClass,container),
-        allImages = s('.pcjsImage' ,imgList),
+        allImages = s('.pcjs-image' ,imgList),
         cover = s("<div id='cover'></div>"),
         coverLink = s('<a id="cover-link" target="blank"></a>'),
         coverLinkContainer = s('<div id="cover-link-container" class="empty"></div>'),
@@ -756,7 +764,7 @@
    pcjsImage Object:  Store useful image/post info
 /////////////////////////////////////////////////////////////////////////// */  
   function pcjsImage(img,title,src,width,height,alt,perm,excerpt){
-    this.type = 'pcjsImage';
+    this.type = 'pcjs-image';
     this.title = title;
     this.img = img; // JS Image Object
     this.src = src;
@@ -2772,7 +2780,7 @@
 
   s.fn.PhotoCubeJS.options = {
     imageListClass : 'cube-img-list',
-    style: "cube",
+    style: "cube", 
     special: "cube_rot_x",
     width: 1.85,
     height: 1,

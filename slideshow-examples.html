@@ -40,9 +40,9 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6"> 
           <ul class="nav navbar-nav"> 
             <li><a href="index.html">Main</a></li>
-            <li><a href="slideshow-examples.html">Slideshow Examples</a></li>
+            <li class="active"><a href="slideshow-examples.html">Slideshow Examples</a></li>
             <li><a href="cube-examples.html">Cube Examples</a></li>
-            <li class="active"><a href="slicebox-examples.html">Slicebox Examples</a></li>
+            <li><a href="slicebox-examples.html">Slicebox Examples</a></li>
           </ul> 
         </div> 
       </div> 
@@ -50,22 +50,18 @@
     
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <h1> PhotoCubeJS: Sliceboxes </h1>
+        <h1> PhotoCubeJS: Cube </h1>
         <p>
-          The PhotoCubeJS jQuery plugin can implement a number of different slicebox animations (options include 'slicebox_drop', 'slicebox_quick', 'slicebox_tip', 'slicebox_swing', 'slicebox_bounce', and 'slicebox_random'). The plugin also includes options for adding a shadow below the slices, adjusting timings, adding play/pause/next/previous buttons, and changing the number of slices. Examples with different options enabled are presented below.
-        </p>
-        <p>
-          Note: The slicebox animations are fairly distracting and unnecessary, and I would caution anyone from sticking a slicebox in the sidebar of a web-page. Nonetheless, the effect is cool and programming the plugin was fun.
+          The PhotoCubeJS jQuery plugin can implement a number of different slideshow animations (options include 'slideshow_random', 'slideshow_reveal', 'slideshow_drop', 'slideshow_rotate', 'slideshow_fade', 'slideshow_shutter', and 'slideshow_up'). The plugin also includes options for adjusting timings and adding play/pause/next/previous buttons. Examples with different options enabled are presented below.
         </p>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <h3> Example One </h3>
         <p>
-          In the example below, the slicebox uses the 'slicebox_random' animation option with 5 slices. The play/pause button is enabled and loaded as paused. 
-          
+          In the example below, the slideshow uses the 'slideshow_random' animation option. The play/pause button is enabled and loaded as paused.
         </p>
       </div>
     </div>
@@ -95,7 +91,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <p>
-          The HTML for the slicebox is given below. The only requirements are that the div on which the plugin is called (in this case, #1-pcjs_container) contains a list of images and that these images are wrapped in a div with the class pcjs-image. The attributes of an image wrapper div may contain data including a title for the image and a permalink to which the image is linked.
+          The HTML for the slideshow is given below. The only requirements are that the div on which the plugin is called (in this case, #1-pcjs_container) contains a list of images and that these images are wrapped in a div with the class pcjs-image. The attributes of an image wrapper div may contain data including a title for the image and a permalink to which the image is linked.
         </p>
 <p>
 <pre class="language-markup"><code class="language-markup">
@@ -134,40 +130,43 @@
        </p>
        
         <p>
-          The JS/jQuery code for calling the plugin is given below. The plugin options include width/height (used for setting the aspect ratio of images), reduce (percent of wrapper height and/or width), shadow (for adding the shadow effect below the slicebox), crop (for cropping the images to fit to the surface of the slicebox), navHover (the next/previous buttons), time/delay (for setting the length in milliseconds of animations and delays between animations), imageLink (for linking the images to the data-permalink), and interval (for setting the milliseconds between each frame rendered to the canvas).
+          The JS/jQuery code for calling the plugin is given below. The plugin options include width/height (used for setting the aspect ratio of images), reduce (percent of wrapper height and/or width), crop (for cropping the images), navHover (the next/previous buttons), time/delay (for setting the length in milliseconds of animations and delays between animations), and imageLink (for linking the images to the data-permalink).
         </p>
         
         <p>
   <pre class="language-javascript"><code class="language-javascript">  
   jQuery("#1-pcjs_container").PhotoCubeJS({
     imageListClass: "pcjs_image_list_class",
-    style: "slicebox",
-    special: "slicebox_random",
+    style: "slideshow",
+    special: "slideshow_random",
     width: 1.85,
     height: 1,
     reduce: 70,
-    shadow: 1,
     crop: 1,
-    numSlices: 5,
     navHover: 1,
-    time: 4000,
+    time: 1000,
     delay: 5000,
     auto: 1,
     playPause: 1,
     startPaused: 1,
     imageLink: 1,
-    interval: 30,
+    postTitle: 0,
+    postExcerpt: 0,
   });
   </code></pre>
         </p>
       </div>
     </div>
     
+
+    
+    
+    
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <h3> Example Two </h3>
         <p>
-          In the example below, the slicebox uses the 'slicebox_quick' animation option with 3 slices. The navigation and play/pause buttons are disabled and the animations are set to trigger automatically after a 2 second delay.
+          In the example below, the slideshow uses the 'slideshow_rotate' animation option. A title and excerpt are added to each slide by enabling the postTitle and postExcerpt options and by populating the data-title and data-excerpt parameters of the pcjs-image elements.
         </p>
       </div>
     </div>
@@ -178,15 +177,15 @@
           <div id="2-hidden-parent" class="pcjs_parent_class" >
             <div id="2-image-list" class="pcjs_image_list_class" style="display:none;visibility:hidden;">
             
-              <div class="pcjs-image" data-id="0" data-title="IMG_0095" data-perm="https://www.flickr.com/photos/70324072@N04/7200304546/" data-excerpt=""><img src="https://farm8.staticflickr.com/7225/7200304546_fedcf4ba42.jpg"></div>
+              <div class="pcjs-image" data-id="0" data-title="Title 1" data-perm="https://www.flickr.com/photos/70324072@N04/7200304546/" data-excerpt="Excerpt 1"><img src="https://farm8.staticflickr.com/7225/7200304546_fedcf4ba42.jpg"></div>
               
-              <div class="pcjs-image" data-id="2" data-title="IMG_0097" data-perm="https://www.flickr.com/photos/70324072@N04/7200318238/" data-excerpt=""><img src="https://farm9.staticflickr.com/8164/7200318238_14c2fae6ae.jpg"></div>
+              <div class="pcjs-image" data-id="2" data-title="Title 2" data-perm="https://www.flickr.com/photos/70324072@N04/7200318238/" data-excerpt="Excerpt 2"><img src="https://farm9.staticflickr.com/8164/7200318238_14c2fae6ae.jpg"></div>
               
-              <div class="pcjs-image" data-id="3" data-title="IMG_0098" data-perm="https://www.flickr.com/photos/70324072@N04/7200322908/" data-excerpt=""><img src="https://farm6.staticflickr.com/5348/7200322908_ec12a7c83b.jpg"></div>
+              <div class="pcjs-image" data-id="3" data-title="Title 3" data-perm="https://www.flickr.com/photos/70324072@N04/7200322908/" data-excerpt="Excerpt 3"><img src="https://farm6.staticflickr.com/5348/7200322908_ec12a7c83b.jpg"></div>
               
-              <div class="pcjs-image" data-id="4" data-title="IMG_0099" data-perm="https://www.flickr.com/photos/70324072@N04/7200326960/" data-excerpt=""><img src="https://farm8.staticflickr.com/7072/7200326960_9f43ec4eb0.jpg"></div>
+              <div class="pcjs-image" data-id="4" data-title="Title 4" data-perm="https://www.flickr.com/photos/70324072@N04/7200326960/" data-excerpt="Excerpt 4"><img src="https://farm8.staticflickr.com/7072/7200326960_9f43ec4eb0.jpg"></div>
               
-              <div class="pcjs-image" data-id="5" data-title="IMG_0102" data-perm="https://www.flickr.com/photos/70324072@N04/7200331570/" data-excerpt=""><img src="https://farm8.staticflickr.com/7087/7200331570_db3cf97bbd.jpg"></div>
+              <div class="pcjs-image" data-id="5" data-title="Temple 5" data-perm="https://www.flickr.com/photos/70324072@N04/7200331570/" data-excerpt="Excerpt 5"><img src="https://farm8.staticflickr.com/7087/7200331570_db3cf97bbd.jpg"></div>
               
             </div>
           </div>
@@ -205,91 +204,25 @@
   <pre class="language-javascript"><code class="language-javascript">  
   jQuery("#2-pcjs_container").PhotoCubeJS({
     imageListClass: "pcjs_image_list_class",
-    style: "slicebox",
-    special: "slicebox_quick",
+    style: "slideshow",
+    special: "slideshow_rotate",
     width: 1.85,
     height: 1,
     reduce: 70,
-    shadow: 1,
     crop: 1,
-    numSlices: 3,
-    navHover: 0,
-    time: 3000,
-    delay: 2000,
+    navHover: 1,
+    time: 1000,
+    delay: 5000,
     auto: 1,
     playPause: 0,
-    startPaused: 0,
     imageLink: 0,
-    interval: 60
+    postTitle: 1,
+    postExcerpt: 1,
   });
   </code></pre>
         </p>
       </div>
     </div>
-    
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <h3> Example Three </h3>
-        <p>
-          In the example below, the slicebox uses the 'slicebox_swing' animation option with 10 slices. The animations are set to fire only when the previous or next buttons are clicked.
-        </p>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="pcjs_wrapper" style="width:60%;position: relative; display: block;margin: 80px auto; clear: both;">
-        <div id="3-pcjs_container" class="pcjs_container_class">
-          <div id="3-hidden-parent" class="pcjs_parent_class" >
-            <div id="3-image-list" class="pcjs_image_list_class" style="display:none;visibility:hidden;">
-            
-              <div class="pcjs-image" data-id="0" data-title="IMG_0095" data-perm="https://www.flickr.com/photos/70324072@N04/7200304546/" data-excerpt=""><img src="https://farm8.staticflickr.com/7225/7200304546_fedcf4ba42.jpg"></div>
-              
-              <div class="pcjs-image" data-id="2" data-title="IMG_0097" data-perm="https://www.flickr.com/photos/70324072@N04/7200318238/" data-excerpt=""><img src="https://farm9.staticflickr.com/8164/7200318238_14c2fae6ae.jpg"></div>
-              
-              <div class="pcjs-image" data-id="3" data-title="IMG_0098" data-perm="https://www.flickr.com/photos/70324072@N04/7200322908/" data-excerpt=""><img src="https://farm6.staticflickr.com/5348/7200322908_ec12a7c83b.jpg"></div>
-              
-              <div class="pcjs-image" data-id="4" data-title="IMG_0099" data-perm="https://www.flickr.com/photos/70324072@N04/7200326960/" data-excerpt=""><img src="https://farm8.staticflickr.com/7072/7200326960_9f43ec4eb0.jpg"></div>
-              
-              <div class="pcjs-image" data-id="5" data-title="IMG_0102" data-perm="https://www.flickr.com/photos/70324072@N04/7200331570/" data-excerpt=""><img src="https://farm8.staticflickr.com/7087/7200331570_db3cf97bbd.jpg"></div>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-        <p>
-        The JS/jQuery code for calling the plugin is given below.
-        </p>
-        <p>
-  <pre class="language-javascript"><code class="language-javascript">  
-  jQuery("#3-pcjs_container").PhotoCubeJS({
-    imageListClass: "pcjs_image_list_class",
-    style: "slicebox",
-    special: "slicebox_swing",
-    width: 1.85,
-    height: 1,
-    reduce: 70,
-    shadow: 0,
-    crop: 1,
-    numSlices: 10,
-    navHover: 1,
-    time: 3000,
-    delay: 0,
-    auto: 0,
-    playPause: 0,
-    startPaused: 0,
-    imageLink: 1,
-    interval: 30
-  });
-  </code></pre>
-        </p>
-      </div>
-    </div>
-
-
     
   </div>
 
@@ -329,23 +262,22 @@
         if( jQuery().PhotoCubeJS ){
           jQuery("#1-pcjs_container").PhotoCubeJS({
             imageListClass: "pcjs_image_list_class",
-            style: "slicebox",
-            special: "slicebox_random",
+            style: "slideshow",
+            special: "slideshow_random",
             width: 1.85,
             height: 1,
             reduce: 70,
-            shadow: 1,
             background: "",
             crop: 1,
-            numSlices: 5,
             navHover: 1,
-            time: 4000,
+            time: 1000,
             delay: 5000,
             auto: 1,
             playPause: 1,
             startPaused: 1,
             imageLink: 1,
-            interval: 30,
+            postTitle: 0,
+            postExcerpt: 0,
           });
         }
       });
@@ -360,59 +292,25 @@
         if( jQuery().PhotoCubeJS ){
           jQuery("#2-pcjs_container").PhotoCubeJS({
             imageListClass: "pcjs_image_list_class",
-            style: "slicebox",
-            special: "slicebox_quick",
-            width: 1.85,
-            height: 1,
-            reduce: 70, /* Percent of wrapper height and/or width */
-            shadow: 1, 
-            background: "",
-            crop: 1,
-            numSlices: 3,
-            navHover: 0,
-            time: 3000,
-            delay: 2000,
-            auto: 1,
-            playPause: 0,
-            startPaused: 0,
-            imageLink: 0,
-            interval: 60, /* The rate (in milliseconds) at which animations fire.*/
-          });
-        }
-      });
-  </script>
-
-  <script>
-      jQuery(document).ready(function() {
-        jQuery("3-pcjs_container").addClass("loading"); 
-      });
-      jQuery(window).load(function() {
-        jQuery("#3-pcjs_container").removeClass("loading");
-        if( jQuery().PhotoCubeJS ){
-          jQuery("#3-pcjs_container").PhotoCubeJS({
-            imageListClass: "pcjs_image_list_class",
-            style: "slicebox",
-            special: "slicebox_swing",
+            style: "slideshow",
+            special: "slideshow_rotate",
             width: 1.85,
             height: 1,
             reduce: 70,
-            shadow: 0,
             background: "",
             crop: 1,
-            numSlices: 10,
             navHover: 1,
-            time: 3000,
-            delay: 0,
-            auto: 0,
+            time: 1000,
+            delay: 5000,
+            auto: 1,
             playPause: 0,
-            startPaused: 0,
-            imageLink: 1,
-            interval: 30, /* The rate (in milliseconds) at which animations fire.*/
+            imageLink: 0,
+            postTitle: 1,
+            postExcerpt: 1,
           });
         }
       });
   </script>
-
 
 </body>
 
